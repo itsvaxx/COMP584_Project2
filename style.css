@@ -1,0 +1,243 @@
+/* Border box declaration */
+html {
+    box-sizing: border-box;
+}
+
+/* inherit border-box on all elements in the universe and before and after */
+*, 
+*:before, 
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, Geneva, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+    font-size: 2rem;
+}
+
+a {
+    color: #2772B0;
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 97%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+}
+
+div img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* grid system -- mobile first! */
+/* flex container */
+.row {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 20px;
+}
+
+/* attribute selector to give some margin between columns and apply styles to flex items */
+[class*="col-"] {
+    margin-left: 4%;
+    flex: 0 0 92%;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Remove left margin for first column in each row */
+.row [class*="col-"]:first-child {
+    margin-left: 0;
+}
+
+/* Add background colors to see how much space each column is taking */
+.col-1 {
+    background-color: #f5f5f5;
+}
+
+.col-2 {
+    background-color: #f5f5f5;
+}
+
+.col-3 {
+    background-color: #f5f5f5;
+}
+
+.col-4 {
+    background-color: #f5f5f5;
+}
+
+.col-5 {
+    background-color: #f5f5f5;
+}
+
+.col-6 {
+    background-color: #f5f5f5;
+}
+
+/* Ensure consistent height for all articles */
+article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+article h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+article p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* Tablet Landscape Screen Sizes */
+@media only screen and (min-width: 480px)  {
+    
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6 {
+        flex: 0 0 48%;
+    }
+    
+    .col-1-3 {
+        flex: 0 0 48%;
+    }
+    
+    .col-3-1 {
+        flex: 0 0 48%;
+    }
+    
+    .col-1-2-1 {
+        flex: 0 0 48%;
+    }
+    
+    .col-2-1-2 {
+        flex: 0 0 48%;
+    }
+    
+    .col-4-wide {
+        flex: 0 0 100%;
+    }
+    
+    /* Reorder for tablet view */
+    .order-1 {
+        order: 1;
+    }
+    
+    .order-2 {
+        order: 2;
+    }
+    
+    .order-3 {
+        order: 3;
+    }
+}
+
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+    
+    .col-1 {
+        flex: 0 0 20%;
+    }
+    
+    .col-2 {
+        flex: 0 0 44%;
+    }
+    
+    .col-3 {
+        flex: 0 0 68%;
+    }
+    
+    .col-4 {
+        flex: 0 0 92%;
+    }
+    
+    .col-5 {
+        flex: 0 0 20%;
+    }
+    
+    .col-6 {
+        flex: 0 0 15%;
+    }
+    
+    .col-1-3 {
+        flex: 0 0 20%;
+    }
+    
+    .col-3-1 {
+        flex: 0 0 68%;
+    }
+    
+    .col-1-2-1 {
+        flex: 0 0 20%;
+    }
+    
+    .col-2-1-2 {
+        flex: 0 0 44%;
+    }
+    
+    .col-4-wide {
+        flex: 0 0 92%;
+    }
+    
+    /* Reset order for desktop */
+    .order-1 {
+        order: 0;
+    }
+    
+    .order-2 {
+        order: 0;
+    }
+    
+    .order-3 {
+        order: 0;
+    }
+    
+    /* Special order for 1-2-1 layout */
+    .row-5 .order-1 {
+        order: 1;
+    }
+    
+    .row-5 .order-2 {
+        order: 2;
+    }
+    
+    .row-5 .order-3 {
+        order: 3;
+    }
+}
